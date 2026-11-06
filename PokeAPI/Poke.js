@@ -44,18 +44,18 @@ async function show(raw) {//Limpia el input
     const prev = s.evolves_from_species ? [s.evolves_from_species] : [];
     const types = names.map(t => { const [l, c] = TYPES[t] || [t, "#888"]; return `<span class="type" style="background:${c}">${l}</span>`; }).join("");//muestra los tipos del pokemon con su color
     out.innerHTML = `
-      <article class="card" style="--accent:${accent}">//tiene la tarjeta, le asigna un color y lo guarda
+      <article class="card" style="--accent:${accent}">
         <div class="hero">
-          <span class="num">#${String(p.id).padStart(3, "0")}</span>//muestra el numero del pokemon con 3 digitos
-          <div class="disc"><img src="${BASE}other/official-artwork/${p.id}.png" alt="${p.name}"></div>//muestra la imagen del pokemon
+          <span class="num">#${String(p.id).padStart(3, "0")}</span>
+          <div class="disc"><img src="${BASE}other/official-artwork/${p.id}.png" alt="${p.name}"></div>
         </div>
         <div class="body">
           <h2>${pretty(p.name)}</h2>
           ${esName && esName.toLowerCase() !== p.name ? `<p class="es">En español: ${esName}</p>` : ""}//si el nombre en español es diferente al nombre en ingles lo muestra
           <div class="types">${types}</div>
           <p class="desc">${text}</p>//muestra la descripcion del pokemon
-          <section class="evos"><h3>Prevolución</h3>${list(prev, "No tiene prevolución.")}</section>//muestra la prevolucion del pokemon, si no tiene muestra un mensaje que no tiene
-          <section class="evos"><h3>Evolución</h3>${list(next, "No evoluciona.")}</section>//muestra la evolucion del pokemon, si no tiene muestra un mensaje que no tiene
+          <section class="evos"><h3>Prevolución</h3>${list(prev, "No tiene prevolución.")}<
+          <section class="evos"><h3>Evolución</h3>${list(next, "No evoluciona.")}</section>
         </div>
       </article>`;
   } catch {
