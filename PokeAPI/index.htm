@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrap">
+        <h1>Poke<span>dex</span></h1>
+        <form id="f" autocomplete="off">
+            <input id="q" type="search" list="names" placeholder="Numero o nombre" aria-label="Buscar Pokemon">
+            <button class="go" type="submit">Buscar</button>
+        </form>
+        <datalist id="names"></datalist>
+        <p class="hint">Los nombres se buscan en ingles.</p>
+        <main id="out"><div class="msg">Escribe un numero o un nombre para empezar.</div></main>
+    </div>
+    <script src="Poke.js"></script>
+
+
+  
+</body>
+</html>
